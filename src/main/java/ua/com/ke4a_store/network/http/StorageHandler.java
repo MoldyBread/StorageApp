@@ -45,13 +45,13 @@ public class StorageHandler implements HttpHandler {
         //goodById.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC","root","admin");
         OutputStream os = exchange.getResponseBody();
         try {
-            goodById.callCommand();
-            ObjectMapper mapper = new ObjectMapper();
-            if(goodById.getConnection() == null)
-                throw new SQLException();
-            String jsonSt = mapper.writeValueAsString(goodById.getConnection());
-            exchange.sendResponseHeaders(200,jsonSt.getBytes().length);
-            os.write(jsonSt.getBytes());
+           goodById.callCommand();
+//            ObjectMapper mapper = new ObjectMapper();
+//            if(goodById.getConnection() == null)
+//                throw new SQLException();
+//            String jsonSt = mapper.writeValueAsString(goodById.getConnection());
+//            exchange.sendResponseHeaders(200,jsonSt.getBytes().length);
+//            os.write(jsonSt.getBytes());
 
         } catch (SQLException e) {
             exchange.sendResponseHeaders(404, 0);

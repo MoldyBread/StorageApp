@@ -43,7 +43,7 @@ public class GoodsHandler implements Command {
 
     public void callCommand(String commandTitle) {
         GoodsDaoImpl goodsDao = new GoodsDaoImpl(new Connector());
-        switch (commandTitle){
+        switch (commandTitle) {
             case "update":
                 break;
             case "delete":
@@ -52,6 +52,10 @@ public class GoodsHandler implements Command {
             case "create":
 //                goodsDao.insert(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)),3);
                 break;
+        }
+
+    }
+
     public String getCommand() {
         return null;
     }
