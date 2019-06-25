@@ -57,8 +57,6 @@ public class GroupsController extends HttpServlet {
                 groupsService.updateById(new GoodsGroup(name));
                 resp.sendRedirect("/groups");
                 break;
-            default:
-                    resp.sendRedirect("/goods");
         }
     }
 }

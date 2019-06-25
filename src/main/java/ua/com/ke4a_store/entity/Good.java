@@ -8,13 +8,16 @@ public class Good {
     private String name;
     private int price;
     private int count;
+    private long groupId;
 
-    public Good(long id, String name, int price, int count) {
+    public Good(long id, String name, int price, int count, long groupId) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.count = count;
+        this.groupId = groupId;
     }
+
 
     public Good(String name, int price, int count){
         this.name=name;
@@ -52,6 +55,14 @@ public class Good {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(long groupId) {
+        this.groupId = groupId;
     }
 
     @Override
