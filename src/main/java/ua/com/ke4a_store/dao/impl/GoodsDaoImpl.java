@@ -74,7 +74,25 @@ public class GoodsDaoImpl extends GenericDaoImpl<Good> implements GoodsDao {
 
     @Override
     public List<Good> findByName(String partName) {
-        throw new UnsupportedOperationException("HAVENT OVERRIDED");
+
+        partName = "%"+partName+"%";
+
+        try (Connection connection = connector.getConnection()) {
+            //Try-with-resources
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT * FROM " + table + " WHERE name LIKE ?");
+
+            preparedStatement.setString(1, partName);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return mapResultSetToList(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
+
     }
 
     @Override
