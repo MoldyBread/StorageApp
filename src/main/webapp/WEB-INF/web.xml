@@ -20,6 +20,11 @@
         <servlet-class>ua.com.ke4a_store.Controller.GoodsController</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>result</servlet-name>
+        <servlet-class>ua.com.ke4a_store.Controller.ResultController</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -34,6 +39,11 @@
     <servlet-mapping>
         <servlet-name>goods</servlet-name>
         <url-pattern>/goods</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>result</servlet-name>
+        <url-pattern>/result</url-pattern>
     </servlet-mapping>
 
 

@@ -36,15 +36,15 @@ public class GoodsController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
+        long id;
 
         switch (action) {
             case "delete":
-                long id = Long.parseLong(req.getParameter("id"));
+                id = Long.parseLong(req.getParameter("id"));
                 goodsService.deleteById(id);
                 resp.sendRedirect("/goods");
                 break;
             case "add":
-                id = Long.parseLong(req.getParameter("id"));
                 String name = req.getParameter("name");
                 int price = Integer.parseInt(req.getParameter("price"));
                 int count=Integer.parseInt(req.getParameter("count"));
@@ -54,6 +54,11 @@ public class GoodsController extends HttpServlet {
                 resp.sendRedirect("/goods");
                 break;
             case "edit":
+                break;
+            case "search":
+                String pName = req.getParameter("search");
+                req.getSession().setAttribute("found",goodsService.findByName(pName));
+                resp.sendRedirect("/result");
                 break;
         }
     }

@@ -45,7 +45,7 @@ public class StorageHandler implements HttpHandler {
         //goodById.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC","root","admin");
         OutputStream os = exchange.getResponseBody();
         try {
-            goodById.callCommand();
+           goodById.callCommand();
 //            ObjectMapper mapper = new ObjectMapper();
 //            if(goodById.getConnection() == null)
 //                throw new SQLException();
