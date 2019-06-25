@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import ua.com.ke4a_store.dao.impl.Connector;
+import ua.com.ke4a_store.network.crypt.Encriptor;
 import ua.com.ke4a_store.network.http.commands.impl.GoodsHandler;
 
 import java.io.IOException;
@@ -42,7 +43,6 @@ public class StorageHandler implements HttpHandler {
         String path = exchange.getRequestURI().getPath();
         GoodsHandler goodById = new GoodsHandler(Integer.parseInt(path.substring(path.lastIndexOf("/")+1)));
         Connection connection = connector.getConnection();
-        //goodById.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC","root","admin");
         OutputStream os = exchange.getResponseBody();
         try {
            goodById.callCommand();

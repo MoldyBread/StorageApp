@@ -11,23 +11,23 @@ public class StorageServer {
     private static final String USER_NAME = "root";
     private static final String PASSWORD = "admin";
 
-    private static final ExecutorService executor = Executors.newFixedThreadPool(5);
+    private static final ExecutorService executor = Executors.newFixedThreadPool(10);
 
     public static void main(String[] args) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        HttpServer server = HttpServer.create();
-        server.bind(new InetSocketAddress(8089), 0);
-        LoginHandler loginHandler = new LoginHandler();
-                                                                                                                                            //loginHandler.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC",USER_NAME,PASSWORD);
-        HttpContext goodContext = server.createContext("/goods", new StorageHandler());
-        goodContext.setAuthenticator(new Auth());
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            HttpServer server = HttpServer.create();
+            server.bind(new InetSocketAddress(8089), 0);
+            LoginHandler loginHandler = new LoginHandler();
+            //loginHandler.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC",USER_NAME,PASSWORD);
+            HttpContext goodContext = server.createContext("/goods", new StorageHandler());
+            goodContext.setAuthenticator(new Auth());
 
-        server.setExecutor(executor);
-                                                                                                                                                                        server.setExecutor(null);
-        server.start();
-        System.out.println("Storage server has been started");
+            server.setExecutor(executor);
+            server.setExecutor(null);
+            server.start();
+            System.out.println("Storage server has been started");
 
-        try {
+            try {
             executor.submit((Runnable) server::getExecutor);
         }catch (RuntimeException e){
             e.printStackTrace();
