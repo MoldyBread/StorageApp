@@ -13,6 +13,7 @@
 <body>
 <a href="/groups">Groups</a>
 <a href="/goods">Goods</a>
+
 <table class="table">
     <thead>
     <tr>
@@ -21,7 +22,6 @@
         <th scope="col">Total amount</th>
         <th scope="col">Total price</th>
         <th scope="col">Update</th>
-
     </tr>
     </thead>
     <tbody>
@@ -35,15 +35,28 @@
                 </form>
             </th>
             <td>${group.name}</td>
-            <c:set var="amount" value="${0}"/>
-            <td>${amount}</td>
+            <td>${group.getTotalCount()}</td>
+            <td>${group.getTotalPrice()}</td>
             <td>
-                <c:set var="price" value="${0}"/>
-                    ${price}</td>
+                <form action="" method="post">
+                    <input type="submit" value="Edit" class="page-link mx-auto">
+                    <input type="hidden" name="id" value="${group.id}">
+                    <input type="hidden" name="action" value="edit">
+                </form>
+            </td>
         </tr>
     </c:forEach>
+    <tr>
+        <th scope="row">
+            <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#AddModal">
+                +
+            </button>
+        </th>
+    </tr>
     </tbody>
 </table>
 </body>
+<jsp:include page="addmodal.jsp"/>
+
 <jsp:include page="footer.jsp"/>
 
