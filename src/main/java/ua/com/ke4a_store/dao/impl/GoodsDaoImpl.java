@@ -54,12 +54,13 @@ public class GoodsDaoImpl extends GenericDaoImpl<Good> implements GoodsDao {
             //Try-with-resource
 
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("UPDATE goods SET name=?,price=?,count=? WHERE id=?");
+                    .prepareStatement("UPDATE goods SET name=?,price=?,count=?,groupid=? WHERE id=?");
 
             preparedStatement.setString(1,item.getName());
             preparedStatement.setInt(2,item.getPrice());
             preparedStatement.setInt(3,item.getCount());
-            preparedStatement.setLong(4,item.getId());
+            preparedStatement.setLong(4,item.getGroupId());
+            preparedStatement.setLong(5,item.getId());
 
             preparedStatement.executeUpdate();
 

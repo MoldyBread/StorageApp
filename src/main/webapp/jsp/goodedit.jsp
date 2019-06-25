@@ -30,7 +30,7 @@
                     <td><input type="text" name="name" value="${good.name}">
                     </td>
                     <td>
-                        <select>
+                        <select name="groupId">
                             <c:forEach var="group" items="${groups}">
                                 <option value="${group.id}"
                                         <c:if test="${group.id == good.groupId}">
