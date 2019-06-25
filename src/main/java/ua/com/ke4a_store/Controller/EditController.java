@@ -22,8 +22,8 @@ public class EditController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Long.parseLong((String) req.getSession().getAttribute("currentid"));
-        if(((String)req.getSession().getAttribute("edittype")).equals("1")) {
+        long id = (long) req.getSession().getAttribute("currentid");
+        if((req.getSession().getAttribute("edittype")).equals("1")) {
 
             String name = req.getParameter("name");
             int price = Integer.parseInt(req.getParameter("price"));
