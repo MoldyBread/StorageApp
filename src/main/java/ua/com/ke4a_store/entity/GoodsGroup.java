@@ -35,6 +35,22 @@ public class GoodsGroup {
         this.goods.addAll(goods);
     }
 
+    public long getTotalPrice(){
+        long res = 0;
+        for (Good good : goods){
+            res += good.getCount() * good.getPrice();
+        }
+        return res;
+    }
+
+    public long getTotalCount(){
+        long res = 0;
+        for (Good good: goods){
+            res += good.getCount();
+        }
+        return res;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

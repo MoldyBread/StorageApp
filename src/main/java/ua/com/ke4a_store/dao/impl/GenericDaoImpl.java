@@ -11,7 +11,6 @@ import java.util.List;
 
 public abstract class GenericDaoImpl <T> implements GenericDao<T> {
 
-
     private static final String FIND_ALL = "SELECT * FROM ";
 
     protected final String table;

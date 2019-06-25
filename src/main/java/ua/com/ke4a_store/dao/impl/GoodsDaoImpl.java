@@ -113,4 +113,5 @@ public class GoodsDaoImpl extends GenericDaoImpl<Good> implements GoodsDao {
 
         return new ArrayList<>();
     }
+
 }
