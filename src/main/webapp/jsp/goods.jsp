@@ -12,6 +12,11 @@
 <jsp:include page="header.jsp"/>
 <a href="/groups">Groups</a>
 <a href="/goods">Goods</a>
+<form action="" method="post">
+    <input type="text" name="search">
+    <input type="hidden" name="action" value="search">
+    <input type="submit" value="search" class="page-link">
+</form>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -35,7 +40,7 @@
                 </form>
             </th>
             <td>${good.name}</td>
-            <td>${good.groupid}</td>
+            <td>${good.groupId}</td>
             <td>${good.price}</td>
             <td>${good.count}</td>
             <td>${good.count * good.price}</td>

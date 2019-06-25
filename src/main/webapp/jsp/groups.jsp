@@ -12,7 +12,6 @@
 <jsp:include page="header.jsp"/>
 <a href="/groups">Groups</a>
 <a href="/goods">Goods</a>
-
 <table class="table table-striped">
     <thead>
     <tr>

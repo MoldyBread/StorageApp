@@ -45,13 +45,13 @@ public class GoodsHandler implements Command {
         GoodsDaoImpl goodsDao = new GoodsDaoImpl(new Connector());
         switch (commandTitle){
             case "update":
-                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
+//                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
                 break;
             case "delete":
-                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
+//                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
                 break;
             case "create":
-                goodsDao.insert(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)),3);
+//                goodsDao.insert(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)),3);
                 break;
         }
     }

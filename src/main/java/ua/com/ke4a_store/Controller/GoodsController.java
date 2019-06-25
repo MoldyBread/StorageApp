@@ -41,7 +41,7 @@ public class GoodsController extends HttpServlet {
             case "delete":
                 long id = Long.parseLong(req.getParameter("id"));
                 goodsService.deleteById(id);
-                resp.sendRedirect("/groups");
+                resp.sendRedirect("/goods");
                 break;
             case "add":
                 id = Long.parseLong(req.getParameter("id"));
@@ -51,7 +51,7 @@ public class GoodsController extends HttpServlet {
                 long groupId = Long.parseLong(req.getParameter("groupid"));
 
                 goodsService.insert(new Good(name,price,count),groupId);
-                resp.sendRedirect("/groups");
+                resp.sendRedirect("/goods");
                 break;
         }
     }
