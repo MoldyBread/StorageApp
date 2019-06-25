@@ -16,6 +16,11 @@ import java.util.Optional;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (null != req.getSession().getAttribute("isLogged")) {
+            resp.sendRedirect("/goods");
+            return;
+        }
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/login.jsp");
         requestDispatcher.forward(req, resp);
     }

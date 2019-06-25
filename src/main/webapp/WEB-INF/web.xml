@@ -20,6 +20,7 @@
         <servlet-class>ua.com.ke4a_store.Controller.GoodsController</servlet-class>
     </servlet>
 
+
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/</url-pattern>
