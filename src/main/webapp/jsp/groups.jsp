@@ -10,11 +10,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
-<body>
 <a href="/groups">Groups</a>
 <a href="/goods">Goods</a>
 
-<table class="table">
+<table class="table table-striped">
     <thead>
     <tr>
         <th scope="col">Remove</th>
@@ -46,16 +45,13 @@
             </td>
         </tr>
     </c:forEach>
-    <tr>
-        <th scope="row">
-            <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#AddModal">
-                +
-            </button>
-        </th>
-    </tr>
     </tbody>
 </table>
-</body>
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#AddModal">
+    +
+</button>
+</div>
 <jsp:include page="addmodal.jsp"/>
 
 <jsp:include page="footer.jsp"/>
