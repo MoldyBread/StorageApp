@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"/>
 <a href="/groups">Groups</a>
 <a href="/goods">Goods</a>
-<table class="table table-striped">
+<table class="table">
     <thead>
     <tr>
         <th scope="col">Remove</th>

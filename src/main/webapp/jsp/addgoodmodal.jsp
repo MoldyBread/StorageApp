@@ -27,7 +27,7 @@
                                 Name:
                             </td>
                             <td>
-                                <input type="text" name="name">
+                                <input type="text" name="name" id="goodName">
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@
                                 Group:
                             </td>
                             <td>
-                                <select name="groupId">
+                                <select name="groupId" id="goodGroup">
                                     <c:forEach var="group" items="${groups}">
                                         <option value="${group.id}">${group.name}</option>
                                     </c:forEach>
@@ -47,7 +47,7 @@
                                 Price:
                             </td>
                             <td>
-                                <input type="number" name="price">
+                                <input type="number" name="price" id="goodPrice">
                             </td>
                         </tr>
                         <tr>
@@ -55,7 +55,7 @@
                                 Amount:
                             </td>
                             <td>
-                                <input type="number" name="count">
+                                <input type="number" name="count" id="goodAmount">
                             </td>
                         </tr>
 

@@ -17,7 +17,7 @@
     <input type="hidden" name="action" value="search">
     <input type="submit" value="search" class="page-link">
 </form>
-<table class="table table-striped">
+<table class="table">
     <thead>
     <tr>
         <th scope="col">Remove</th>
@@ -51,10 +51,11 @@
             <td>${good.count}</td>
             <td>${good.count * good.price}</td>
             <td>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#EditGoodModal" onClick="setID(${good.id})">
-                    Edit
-                </button>
+                <form action="" method="post">
+                    <input type="submit" value="Edit" class="page-link mx-auto">
+                    <input type="hidden" name="id" value="${good.id}">
+                    <input type="hidden" name="action" value="edit">
+                </form>
             </td>
         </tr>
     </c:forEach>
@@ -66,7 +67,6 @@
     </button>
 </div>
 <jsp:include page="addgoodmodal.jsp"/>
-<jsp:include page="editgood.jsp"/>
 <jsp:include page="footer.jsp"/>
 
 
