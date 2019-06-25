@@ -67,7 +67,7 @@ public class GoodsController extends HttpServlet {
                 break;
             case "search":
                 String pName = req.getParameter("search");
-                req.getSession().setAttribute("found", goodsService.findByName(pName));
+                req.getSession().setAttribute("pName",pName);
                 resp.sendRedirect("/result");
                 break;
         }

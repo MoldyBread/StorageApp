@@ -46,6 +46,14 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <th scope="row">Total:</th>
+        <th></th>
+        <th></th>
+        <th>${tcount}</th>
+        <th>${tprice}</th>
+        <th></th>
+    </tr>
     </tbody>
 </table>
 <div class="d-flex justify-content-center">

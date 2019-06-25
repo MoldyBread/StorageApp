@@ -28,6 +28,15 @@ public class GroupsController extends HttpServlet {
 
         List<GoodsGroup> groups = groupsService.findAll();
 
+        int tpr=0,tct=0;
+        for (GoodsGroup goodsGroup : groups) {
+            tpr+=goodsGroup.getTotalPrice();
+            tct+=goodsGroup.getTotalCount();
+        }
+
+        req.getSession().setAttribute("tprice",tpr);
+        req.getSession().setAttribute("tcount",tct);
+
         req.getSession().setAttribute("groups", groups);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/groups.jsp");

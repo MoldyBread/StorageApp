@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>StorageApp</title>
+    <title>Atb24.biz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
@@ -22,6 +22,6 @@
 <main role="main" class="flex-shrink-0">
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="/groups">
-        StorageApp
+        Atb24.biz
     </a>
 </nav>

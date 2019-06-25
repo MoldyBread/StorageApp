@@ -9,14 +9,52 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<jsp:include page="header.jsp"/>
+<a href="/groups">Groups</a>
+<a href="/goods">Goods</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Remove</th>
+        <th scope="col">Name</th>
+        <th scope="col">Group</th>
+        <th scope="col">Price</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Total price</th>
+        <th scope="col">Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="good" items="${found}">
+        <tr>
+            <th scope="row">
+                <form action="" method="post">
+                    <input type="submit" value="&times;" class="page-link mx-auto">
+                    <input type="hidden" name="id" value="${good.id}">
+                    <input type="hidden" name="action" value="delete">
+                </form>
+            </th>
+            <td>${good.name}</td>
+            <td>
+                <c:forEach var="group" items="${groups}">
+                    <c:if test="${group.id == good.groupId}">
+                        ${group.name}
+                    </c:if>
+                </c:forEach>
+            </td>
+            <td>${good.price}</td>
+            <td>${good.count}</td>
+            <td>${good.count * good.price}</td>
+            <td>
+                <form action="" method="post">
+                    <input type="submit" value="Edit" class="page-link mx-auto">
+                    <input type="hidden" name="id" value="${good.id}">
+                    <input type="hidden" name="action" value="edit">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
-<a href="/goods">Back</a>
-
-${found}
-</body>
-</html>
+<jsp:include page="footer.jsp"/>
