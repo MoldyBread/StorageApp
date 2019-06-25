@@ -80,7 +80,7 @@ public class Good {
     public int hashCode() {
         return Objects.hash(id, name, price, count);
     }
-//
+
     @Override
     public String toString() {
         return "Good{" +

@@ -35,7 +35,7 @@
                 </form>
             </th>
             <td>${good.name}</td>
-            <td>${good.groupid}</td>
+            <td>${good.groupId}</td>
             <td>${good.price}</td>
             <td>${good.count}</td>
             <td>${good.count * good.price}</td>

@@ -41,17 +41,19 @@ public class GoodsController extends HttpServlet {
             case "delete":
                 long id = Long.parseLong(req.getParameter("id"));
                 goodsService.deleteById(id);
-                resp.sendRedirect("/groups");
+                resp.sendRedirect("/goods");
                 break;
             case "add":
                 id = Long.parseLong(req.getParameter("id"));
                 String name = req.getParameter("name");
                 int price = Integer.parseInt(req.getParameter("price"));
                 int count=Integer.parseInt(req.getParameter("count"));
-                long groupId = Long.parseLong(req.getParameter("groupid"));
+                long groupId = Long.parseLong(req.getParameter("groupId"));
 
                 goodsService.insert(new Good(name,price,count),groupId);
-                resp.sendRedirect("/groups");
+                resp.sendRedirect("/goods");
+                break;
+            case "edit":
                 break;
         }
     }
