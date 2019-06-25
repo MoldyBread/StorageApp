@@ -3,6 +3,7 @@ package ua.com.ke4a_store.Controller;
 import ua.com.ke4a_store.dao.impl.Connector;
 import ua.com.ke4a_store.dao.impl.UserDaoImpl;
 import ua.com.ke4a_store.entity.User;
+import ua.com.ke4a_store.service.impl.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +25,7 @@ public class LoginController extends HttpServlet {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
 
-        Optional<User> user = new UserDaoImpl(new Connector()).findByLoginAndPassword(login,password);
+        Optional<User> user = new UserServiceImpl(new UserDaoImpl(new Connector())).findByLoginAndPassword(login,password);
         if(user.isPresent()){
             req.getSession().setAttribute("user",user.get());
             resp.sendRedirect("/main");
