@@ -27,7 +27,7 @@ public class GoodsController extends HttpServlet {
 
         req.getSession().setAttribute("goods",goods);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/main.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/goods.jsp");
         requestDispatcher.forward(req, resp);
     }
 

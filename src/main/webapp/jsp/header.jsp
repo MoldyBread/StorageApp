@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/groups">
         StorageApp
     </a>
 </nav>

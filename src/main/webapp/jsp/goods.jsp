@@ -11,6 +11,8 @@
 <html>
 <jsp:include page="header.jsp"/>
 <body>
+<a href="/groups">Groups</a>
+<a href="/goods">Goods</a>
 logged
 ${user}
 </body>

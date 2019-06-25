@@ -12,12 +12,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
 <body>
-<form action="" method="post" >
-    <input type="text" name="login">
-    <br>
-    <input type="password" name="password">
-    <br>
-    <input type="submit">
-</form>
+<div class="d-flex justify-content-center" style="margin: 15%">
+    <form action="" method="post">
+        <input type="text" name="login">
+        <br>
+        <input type="password" name="password" class="mt-2">
+        <br>
+        <input type="submit" class="mt-3">
+    </form>
+</div>
 </body>
 <jsp:include page="footer.jsp"/>
