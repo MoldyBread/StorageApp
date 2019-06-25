@@ -3,13 +3,11 @@ package ua.com.ke4a_store.Controller;
 import ua.com.ke4a_store.dao.impl.Connector;
 import ua.com.ke4a_store.dao.impl.GoodsDaoImpl;
 import ua.com.ke4a_store.entity.Good;
-import ua.com.ke4a_store.entity.GoodsGroup;
 import ua.com.ke4a_store.service.GoodsService;
 import ua.com.ke4a_store.service.impl.GoodsServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +24,6 @@ public class GoodsController extends HttpServlet {
             resp.sendRedirect("/");
             return;
         }
-//
 
         List<Good> goods = goodsService.findAll();
 
@@ -44,10 +41,17 @@ public class GoodsController extends HttpServlet {
             case "delete":
                 long id = Long.parseLong(req.getParameter("id"));
                 goodsService.deleteById(id);
-                resp.sendRedirect("/goods");
+                resp.sendRedirect("/groups");
                 break;
             case "add":
+                id = Long.parseLong(req.getParameter("id"));
+                String name = req.getParameter("name");
+                int price = Integer.parseInt(req.getParameter("price"));
+                int count=Integer.parseInt(req.getParameter("count"));
+                long groupId = Long.parseLong(req.getParameter("groupid"));
 
+                goodsService.insert(new Good(name,price,count),groupId);
+                resp.sendRedirect("/groups");
                 break;
         }
     }

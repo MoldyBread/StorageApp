@@ -22,8 +22,9 @@ public class GoodsDaoImpl extends GenericDaoImpl<Good> implements GoodsDao {
         String name = resultSet.getString("name");
         int price = resultSet.getInt("price");
         int count = resultSet.getInt("count");
+        long gid = resultSet.getLong("groupid");
 
-        return new Good(id, name, price, count);
+        return new Good(id, name, price, count,gid);
     }
 
     @Override

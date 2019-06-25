@@ -8,13 +8,16 @@ public class Good {
     private String name;
     private int price;
     private int count;
+    private long groupId;
 
-    public Good(long id, String name, int price, int count) {
+    public Good(long id, String name, int price, int count, long groupId) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.count = count;
+        this.groupId = groupId;
     }
+
 
     public Good(String name, int price, int count){
         this.name=name;
@@ -54,6 +57,14 @@ public class Good {
         this.count = count;
     }
 
+    public long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(long groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -69,7 +80,7 @@ public class Good {
     public int hashCode() {
         return Objects.hash(id, name, price, count);
     }
-
+//
     @Override
     public String toString() {
         return "Good{" +
