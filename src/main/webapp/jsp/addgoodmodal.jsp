@@ -32,10 +32,15 @@
                         </tr>
                         <tr>
                             <td>
-                                Amount:
+                                Group:
                             </td>
                             <td>
-                                <input type="number" name="count">
+                                <select name="groupId">
+                                    <option></option>
+                                    <c:forEach var="group" items="${groups}">
+                                        <option value="${group.id}">${group.name}</option>
+                                    </c:forEach>
+                                </select>
                             </td>
                         </tr>
                         <tr>
@@ -48,17 +53,14 @@
                         </tr>
                         <tr>
                             <td>
-                                Group:
+                                Amount:
                             </td>
                             <td>
-                            <select name="groupId">
-                                <option></option>
-                                <c:forEach var="group" items="${groups}">
-                                    <option value="${group.id}">${group.name}</option>
-                                </c:forEach>
-                            </select>
+                                <input type="number" name="count">
                             </td>
                         </tr>
+
+
                     </table>
                     <input type="submit" value="Add good" class="page-link text-right mt-3">
                     <input type="hidden" name="action" value="add">

@@ -17,6 +17,7 @@
     <thead>
     <tr>
         <th scope="col">Remove</th>
+        <th scope="col">ID</th>
         <th scope="col">Group Name</th>
         <th scope="col">Total amount</th>
         <th scope="col">Total price</th>
@@ -33,6 +34,7 @@
                     <input type="hidden" name="action" value="delete">
                 </form>
             </th>
+            <td>${group.id}</td>
             <td>${group.name}</td>
             <td>${group.getTotalCount()}</td>
             <td>${group.getTotalPrice()}</td>
