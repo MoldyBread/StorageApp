@@ -17,6 +17,7 @@
         <thead>
         <tr>
             <th scope="col">Name</th>
+            <c:if test="${edittype == 2}">
             <th scope="col">Group</th>
             <th scope="col">Price</th>
             <th scope="col">Amount</th>
@@ -26,11 +27,10 @@
         <c:forEach var="good" items="${goods}">
             <c:if test="${currentid == good.id}">
                 <tr>
-
                     <td><input type="text" name="name" value="${good.name}">
                     </td>
                     <td>
-                        <select>
+                        <select name="groupId">
                             <c:forEach var="group" items="${groups}">
                                 <option value="${group.id}"
                                         <c:if test="${group.id == good.groupId}">
@@ -52,6 +52,25 @@
             </c:if>
         </c:forEach>
         </tbody>
+        </c:if>
+        <c:if test="${edittype == 1}">
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <c:forEach var="group" items="${groups}">
+            <c:if test="${group.id == currentid}">
+                <td><input type="text" name="name" value="${group.name}">
+                </td>
+            </c:if>
+            </c:forEach>
+                <td>
+                    <input type="submit" value="Save" class="page-link mx-auto">
+                    <input type="hidden" name="action" value="save">
+                </td>
+        </tr>
+        </tbody>
+        </c:if>
     </table>
 </form>
 
