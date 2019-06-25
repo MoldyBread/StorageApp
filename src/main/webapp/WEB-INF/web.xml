@@ -6,13 +6,23 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>ua.com.ke4a_store.Controller.LoginController</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>main</servlet-name>
         <servlet-class>ua.com.ke4a_store.Controller.MainController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>main</servlet-name>
+        <servlet-name>login</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
     </servlet-mapping>
 
 </web-app>
