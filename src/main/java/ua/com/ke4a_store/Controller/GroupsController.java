@@ -25,6 +25,8 @@ public class GroupsController extends HttpServlet {
 
         List<GoodsGroup> groups = new GroupsServiceImpl(new GroupsDaoImpl(connector)).findAll();
 
+        req.getSession().setAttribute("groups",groups);
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/main.jsp");
         requestDispatcher.forward(req, resp);
     }

@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
         if(user.isPresent()){
             req.getSession().setAttribute("user",user.get());
             req.getSession().setAttribute("isLogged",true);
-            resp.sendRedirect("/main");
+            resp.sendRedirect("/groups");
         }
         else {
             resp.sendRedirect("/");
