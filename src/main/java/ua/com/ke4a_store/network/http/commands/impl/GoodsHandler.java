@@ -45,7 +45,6 @@ public class GoodsHandler implements Command {
         GoodsDaoImpl goodsDao = new GoodsDaoImpl(new Connector());
         switch (commandTitle){
             case "update":
-//                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
                 break;
             case "delete":
 //                goodsDao.updateById(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)));
@@ -53,15 +52,6 @@ public class GoodsHandler implements Command {
             case "create":
 //                goodsDao.insert(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)),3);
                 break;
-        }
-    }
-
-
-    public Connection getConnection() {
-        return connection;
-    }
-
-    @Override
     public String getCommand() {
         return null;
     }

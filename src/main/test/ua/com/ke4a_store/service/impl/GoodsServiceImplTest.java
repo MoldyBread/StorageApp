@@ -25,7 +25,7 @@ public class GoodsServiceImplTest {
 
 
     private Good good() {
-        return new Good(1L, "cola",5,5);
+        return new Good(1L, "cola",5,5,1L);
     }
 
     private Good[] goods() {

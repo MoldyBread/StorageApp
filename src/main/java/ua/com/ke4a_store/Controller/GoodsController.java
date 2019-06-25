@@ -48,10 +48,12 @@ public class GoodsController extends HttpServlet {
                 String name = req.getParameter("name");
                 int price = Integer.parseInt(req.getParameter("price"));
                 int count=Integer.parseInt(req.getParameter("count"));
-                long groupId = Long.parseLong(req.getParameter("groupid"));
+                long groupId = Long.parseLong(req.getParameter("groupId"));
 
                 goodsService.insert(new Good(name,price,count),groupId);
                 resp.sendRedirect("/goods");
+                break;
+            case "edit":
                 break;
         }
     }
