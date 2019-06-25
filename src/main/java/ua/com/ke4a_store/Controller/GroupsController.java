@@ -27,7 +27,7 @@ public class GroupsController extends HttpServlet {
 
         req.getSession().setAttribute("groups",groups);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/main.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("jsp/groups.jsp");
         requestDispatcher.forward(req, resp);
     }
 
