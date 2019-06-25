@@ -30,11 +30,10 @@ public class GroupsDaoImpl extends GenericDaoImpl<GoodsGroup> implements GroupsD
             //Try-with-resource
 
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT ggroups(id,name) VALUES (?,?)");
+                    .prepareStatement("INSERT ggroups(name) VALUES (?)");
 
 
-            preparedStatement.setLong(1,item.getId());
-            preparedStatement.setString(2,item.getName());
+            preparedStatement.setString(1,item.getName());
 
 
             preparedStatement.executeUpdate();

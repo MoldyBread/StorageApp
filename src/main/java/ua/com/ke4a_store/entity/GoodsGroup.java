@@ -15,6 +15,11 @@ public class GoodsGroup {
         goods=new ArrayList<>();
     }
 
+    public GoodsGroup(String name) {
+        this.name = name;
+        goods=new ArrayList<>();
+    }
+
     public long getId() {
         return id;
     }

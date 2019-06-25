@@ -16,6 +16,12 @@ public class Good {
         this.count = count;
     }
 
+    public Good(String name, int price, int count){
+        this.name=name;
+        this.price=price;
+        this.count=count;
+    }
+
     public long getId() {
         return id;
     }

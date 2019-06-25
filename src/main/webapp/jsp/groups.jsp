@@ -29,7 +29,7 @@
             <th scope="row">
                 <form action="" method="post">
                     <input type="submit" value="&times;" class="page-link mx-auto">
-                    <input type="hidden" name="${group.id}" value="${group.id}">
+                    <input type="hidden" name="id" value="${group.id}">
                     <input type="hidden" name="action" value="delete">
                 </form>
             </th>
