@@ -26,7 +26,7 @@ public class GoodsController extends HttpServlet {
             resp.sendRedirect("/");
             return;
         }
-
+//
 
         List<Good> goods = goodsService.findAll();
 
