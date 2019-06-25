@@ -54,7 +54,8 @@ public class GroupsController extends HttpServlet {
             case "edit":
                 name = req.getParameter("name");
                 id = Long.parseLong(req.getParameter("id"));
-                groupsService.updateById(new GoodsGroup(name));
+
+                groupsService.updateById(new GoodsGroup(id,name));
                 resp.sendRedirect("/groups");
                 break;
         }
