@@ -11,8 +11,8 @@
     </servlet>
 
     <servlet>
-        <servlet-name>main</servlet-name>
-        <servlet-class>ua.com.ke4a_store.Controller.MainController</servlet-class>
+        <servlet-name>groups</servlet-name>
+        <servlet-class>ua.com.ke4a_store.Controller.GroupsController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -21,8 +21,8 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>main</servlet-name>
-        <url-pattern>/main</url-pattern>
+        <servlet-name>groups</servlet-name>
+        <url-pattern>/groups</url-pattern>
     </servlet-mapping>
 
 </web-app>

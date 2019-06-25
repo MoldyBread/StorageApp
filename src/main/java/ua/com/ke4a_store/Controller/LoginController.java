@@ -28,6 +28,7 @@ public class LoginController extends HttpServlet {
         Optional<User> user = new UserServiceImpl(new UserDaoImpl(new Connector())).findByLoginAndPassword(login,password);
         if(user.isPresent()){
             req.getSession().setAttribute("user",user.get());
+            req.getSession().setAttribute("isLogged",true);
             resp.sendRedirect("/main");
         }
         else {
