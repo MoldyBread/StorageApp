@@ -1,6 +1,10 @@
 package ua.com.ke4a_store.Controller;
 
+import ua.com.ke4a_store.dao.impl.Connector;
+import ua.com.ke4a_store.dao.impl.GoodsDaoImpl;
+import ua.com.ke4a_store.dao.impl.GroupsDaoImpl;
 import ua.com.ke4a_store.entity.Good;
+import ua.com.ke4a_store.entity.GoodsGroup;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,12 +22,21 @@ public class EditController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(((String)req.getSession().getAttribute("currentid")).equals("1"))
-        String name = req.getParameter("name");
-        int price = Integer.parseInt(req.getParameter("price"));
-        int count = Integer.parseInt(req.getParameter("count"));
-        long groupId = Long.parseLong(req.getParameter("groupId"));
+        long id = Long.parseLong((String) req.getSession().getAttribute("currentid"));
+        if(((String)req.getSession().getAttribute("edittype")).equals("1")) {
 
-        goodsService.updateById(new Good(id, name, price, count, groupId));
+            String name = req.getParameter("name");
+            int price = Integer.parseInt(req.getParameter("price"));
+            int count = Integer.parseInt(req.getParameter("count"));
+            long groupId = Long.parseLong(req.getParameter("groupId"));
+            new GoodsDaoImpl(new Connector()).updateById(new Good(id, name, price, count, groupId));
+            resp.sendRedirect("/goods");
+        }else {
+            String name = req.getParameter("name");
+            new GroupsDaoImpl(new Connector()).updateById(new GoodsGroup(id,name));
+            resp.sendRedirect("/groups");
+        }
+
+
     }
 }

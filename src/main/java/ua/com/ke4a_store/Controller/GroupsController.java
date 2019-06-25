@@ -52,11 +52,10 @@ public class GroupsController extends HttpServlet {
                 resp.sendRedirect("/groups");
                 break;
             case "edit":
-                name = req.getParameter("name");
                 id = Long.parseLong(req.getParameter("id"));
-
-                groupsService.updateById(new GoodsGroup(id,name));
-                resp.sendRedirect("/groups");
+                req.getSession().setAttribute("currentid",id);
+                req.getSession().setAttribute("edittype",1);
+                resp.sendRedirect("/edit");
                 break;
         }
     }
