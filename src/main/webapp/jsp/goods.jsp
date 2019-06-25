@@ -40,16 +40,17 @@
                 </form>
             </th>
             <td>${good.name}</td>
-            <td>${good.groupId}</td>
+            <td>
+                <c:forEach var="group" items="${groups}">
+                    <c:if test="${group.id == good.groupId}">
+                        ${group.name}
+                    </c:if>
+                </c:forEach>
+            </td>
             <td>${good.price}</td>
             <td>${good.count}</td>
             <td>${good.count * good.price}</td>
             <td>
-                    <%--                    <form action="" method="post">--%>
-                    <%--                        <input type="submit" value="Edit" class="page-link mx-auto">--%>
-                    <%--                        <input type="hidden" name="id" value="${good.id}">--%>
-                    <%--                        <input type="hidden" name="action" value="edit">--%>
-                    <%--                    </form>--%>
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                         data-target="#EditGoodModal" onClick="setID(${good.id})">
                     Edit

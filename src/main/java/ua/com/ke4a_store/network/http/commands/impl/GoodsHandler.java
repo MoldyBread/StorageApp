@@ -2,7 +2,6 @@ package ua.com.ke4a_store.network.http.commands.impl;
 
 import ua.com.ke4a_store.dao.impl.Connector;
 import ua.com.ke4a_store.dao.impl.GoodsDaoImpl;
-import ua.com.ke4a_store.entity.Good;
 import ua.com.ke4a_store.network.http.commands.Command;
 
 import java.sql.*;
@@ -11,23 +10,22 @@ public class GoodsHandler implements Command {
     private Connection connection;
     private int id;
 
-    public GoodsHandler(int id){
+    public GoodsHandler(int id) {
         this.id = id;
     }
 
 
-    public boolean createConnection(Connection connection){
+    public boolean createConnection(Connection connection) {
         this.connection = connection;
         return true;
     }
 
 
-    public boolean createConnection(String url, String username, String password){
-        try{
+    public boolean createConnection(String url, String username, String password) {
+        try {
             this.connection = DriverManager.getConnection(url, username, password);
             return true;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
@@ -35,7 +33,7 @@ public class GoodsHandler implements Command {
     @Override
     public void callCommand() throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM goods WHERE id = ?");
-        preparedStatement.setInt(1,id);
+        preparedStatement.setInt(1, id);
         ResultSet rs = preparedStatement.executeQuery();
 
         rs.next();
@@ -53,7 +51,6 @@ public class GoodsHandler implements Command {
 //                goodsDao.insert(new Good(0,commandTitle, Integer.valueOf(commandTitle),Integer.reverse(id)),3);
                 break;
         }
-
     }
 
     public String getCommand() {
