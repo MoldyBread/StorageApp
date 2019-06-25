@@ -18,7 +18,7 @@
         <br>
         <input type="password" name="password" class="mt-2">
         <br>
-        <input type="submit" class="mt-3">
+        <input type="submit" class="mt-3 btn btn-primary">
     </form>
 </div>
 </body>
