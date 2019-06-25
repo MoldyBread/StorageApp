@@ -35,7 +35,7 @@
                                 Amount:
                             </td>
                             <td>
-                                <input type="number" name="amount">
+                                <input type="number" name="count">
                             </td>
                         </tr>
                         <tr>
@@ -61,7 +61,7 @@
                         </tr>
                     </table>
                     <input type="submit" value="Add good" class="page-link text-right mt-3">
-                    <input type="hidden" name="action" value="addgood">
+                    <input type="hidden" name="action" value="add">
                 </form>
             </div>
 
