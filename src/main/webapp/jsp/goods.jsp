@@ -66,6 +66,7 @@
         +
     </button>
 </div>
+
 <jsp:include page="addgoodmodal.jsp"/>
 <jsp:include page="footer.jsp"/>
 

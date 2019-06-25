@@ -55,13 +55,15 @@ public class GoodsController extends HttpServlet {
                 break;
             case "edit":
                 id = Long.parseLong(req.getParameter("id"));
-                name = req.getParameter("name");
-                price = Integer.parseInt(req.getParameter("price"));
-                count = Integer.parseInt(req.getParameter("count"));
-                groupId = Long.parseLong(req.getParameter("groupId"));
-
-                goodsService.updateById(new Good(id,name, price, count, groupId));
-                resp.sendRedirect("/goods");
+//                name = req.getParameter("name");
+//                price = Integer.parseInt(req.getParameter("price"));
+//                count = Integer.parseInt(req.getParameter("count"));
+//                groupId = Long.parseLong(req.getParameter("groupId"));
+//
+//                goodsService.updateById(new Good(id,name, price, count, groupId));
+                req.getSession().setAttribute("currentid",id);
+                req.getSession().setAttribute("edittype",2);
+                resp.sendRedirect("/edit");
                 break;
             case "search":
                 String pName = req.getParameter("search");
