@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.*;
 
+
+//      /login
 public class LoginHandler implements HttpHandler {
 
     private Connection connection;
@@ -48,19 +50,4 @@ public class LoginHandler implements HttpHandler {
             return false;
         }
     }
-
-    public boolean createConnection(Connection connection) {
-        this.connection = connection;
-        return true;
-    }
-
-    public boolean createConnection(String url, String username, String password) {
-        try {
-            this.connection = DriverManager.getConnection(url, username, password);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
 }
