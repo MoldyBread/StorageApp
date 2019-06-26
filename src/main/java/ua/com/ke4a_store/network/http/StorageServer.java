@@ -18,7 +18,7 @@ public class StorageServer {
             HttpServer server = HttpServer.create();
             server.bind(new InetSocketAddress(8089), 0);
             LoginHandler loginHandler = new LoginHandler();
-            //loginHandler.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC",USER_NAME,PASSWORD);
+                                                                                                                                                                                    //loginHandler.createConnection("jdbc:mysql://localhost/storagedb?serverTimezone=UTC",USER_NAME,PASSWORD);
             HttpContext goodContext = server.createContext("/goods", new StorageHandler());
             goodContext.setAuthenticator(new Auth());
 
